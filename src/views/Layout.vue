@@ -12,22 +12,21 @@
 </template>
 <script>
 export default {
-    name: 'layout',
-    data() {
-        return {
-        }
-    },
-    activated() {
-    },
-    watch: {
-    },
-    created() {
-    },
-    mounted() {
-    },
-    methods: {
+  name: 'layout',
+  data () {
+    return {
     }
-
+  },
+  activated () {
+  },
+  watch: {
+  },
+  created () {
+  },
+  mounted () {
+  },
+  methods: {
+  }
 
 }
 </script>
