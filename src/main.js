@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 
 //1.重置样式库
+
 import 'normalize.css'
 //2.自己项目重置的公共样式
 import '@/assets/styles/common.less'

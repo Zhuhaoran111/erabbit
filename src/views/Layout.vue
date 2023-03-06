@@ -1,33 +1,37 @@
-<template><!-- 顶部导航栏 -->
-    <nav>顶部到好烂</nav>
-    <!-- 头部组件 -->
-    <header>头部组件</header>
-    <!-- 内容容器 -->
-    <div class="main">
-        <!-- 二级路由 -->
-        <RouterView />
-    </div>
-    <!-- 底部组件 -->
-    <footer>底部组件</footer>
+<template>
+  <!-- 顶部导航栏 -->
+  <appNavbar></appNavbar>
+
+  <!-- 头部组件 -->
+  <appHeader></appHeader>
+  <!-- 内容容器 -->
+  <div class="app-body">
+    <!-- 二级路由 -->
+    <RouterView />
+  </div>
+  <!-- 底部组件 -->
+  <appFooter></appFooter>
 </template>
 <script>
+import appNavbar from '@/components/app-navbar.vue';
+import appHeader from '@/components/app-header.vue';
+import appFooter from '@/components/app-footer.vue';
+import { useStore } from 'vuex';
 export default {
   name: 'layout',
-  data () {
-    return {
-    }
-  },
-  activated () {
-  },
-  watch: {
-  },
-  created () {
-  },
-  mounted () {
-  },
-  methods: {
+  components: { appNavbar, appHeader, appFooter },
+
+  //获取分类数据
+  setup() {
+    const store = useStore()
+    store.dispatch('category/getList')
   }
+
 
 }
 </script>
-<style></style>
+<style scoped lang="less">
+.app-body {
+  min-height: 600px
+}
+</style>
